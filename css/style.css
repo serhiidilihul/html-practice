@@ -373,4 +373,16 @@ footer img:hover {
 .post-body p {
     text-align: justify;
     color: black;
+    font-size: 18px;
+}
+
+/* About.html styles */
+.about-header {
+    text-align: center;
+    color: black;
+}
+.about-body p {
+    color: black;
+    text-align: justify;
+    font-size: 18px;
 }
