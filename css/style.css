@@ -1,5 +1,7 @@
 body {
     color: #0C4C70;
+    width: 100vi;
+    overflow-x: hidden;
 }
 
 header {
@@ -9,14 +11,6 @@ header {
     background-color: #ffffff;
     z-index: 1;
 }
-
-/* #logo-img:hover {
-    /* content: url('/images/logo-hover.png'); 
-    transition: 1s;
-    transform: scale(1.1);
-    translate: 1s;
-    
-} */
 
 #cart-img:hover {
     content: url('/images/cart-hover.png');
@@ -43,7 +37,7 @@ header {
     text-align: center;
 }
 
-li h5 {
+div.nav li h5 {
     text-align: center;
 }
 #logo-img {
@@ -64,7 +58,14 @@ li h5 {
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width:900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 5) - 9px);
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
     #genres {
         display: none;
     }
@@ -77,6 +78,9 @@ li h5 {
 
     #quote {
         display: none;
+    }
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
     }
 
 }
@@ -159,12 +163,124 @@ li h5 {
 .menu-first-line {
     height: 40px;
 }
-.genre-filter {
+
+/* Carousel styles */
+.wrapper,
+.carousel,
+.card,
+.img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 35px;
+    background-color: #0C4C70;
+    border-radius: 10px;
+}
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+}
+.wrapper i {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    color:#0C4C70;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 3px  6px #0C4C70;
+}
+.wrapper i:first-child {
+    left: -110px;
+}
+.wrapper i:last-child {
+    right: -110px;
+}
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 5) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.carousel .card {
+    scroll-snap-align: start;
+    height: 300px;
+    width: 200px;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     cursor: pointer;
 }
-footer li {
-    line-height: 30px;
+.carousel .card:hover {
+    transform: scale(102%);
+    transition: 0.5s;
 }
+.card .img img {
+    /* width: 140px; */
+    height: 150px;
+    object-fit: cover;
+}
+.carousel .card p, h5 {
+    text-align: center;
+    text-overflow: ellipsis;
+    max-height: 40px;
+    overflow: hidden;
+    }
+
+@media screen and (max-width:1300px) {
+    .wrapper .carousel {
+        grid-auto-columns: 35%;
+    }
+}
+@media screen and (max-width:900px) {
+    .wrapper .carousel {
+        grid-auto-columns: 50%;
+    }
+}
+@media screen and (max-width:600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 75%;
+    }
+}
+/* END of Carousel styles */
 
 .buy-now {
     background-color: #0C4C70;
@@ -212,9 +328,12 @@ footer li {
 }
 #main-books h5 {
     max-height: 20px;
-<<<<<<< HEAD
-
-=======
+}
+footer {
+    background-color: #0C4C70;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
 }
 footer {
     background-color: #0C4C70;
@@ -238,5 +357,4 @@ footer img:hover {
 }
 #in:hover {
     content: url('/images/footer-in-hover.png');
->>>>>>> 82d4c31 (Added footer to index.html)
 }
