@@ -356,3 +356,21 @@ footer img:hover {
 #in:hover {
     content: url('/images/footer-in-hover.png');
 }
+
+/* Blog.html styles */
+.post-header .post-title {
+    text-align: left;
+    color: black;
+}
+.post-title .episode {
+    color: gray;
+    text-align: left;
+}
+.post-header .post-date {
+    text-align: end;
+    color: gray;
+}
+.post-body p {
+    text-align: justify;
+    color: black;
+}
