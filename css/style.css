@@ -43,6 +43,10 @@ div.nav li h5 {
 #logo-img {
     min-width: 80px;
 }
+header .genre-filter:hover {
+    color:#126a9c;
+    cursor: pointer;
+}
 
 @keyframes pulse {
     0% {
@@ -157,7 +161,7 @@ li h5 {
 }
 
 .menu-first-line:hover {
-    background-color: #0C4C70;
+    background-color: #0C4C70 !important;
 }
 
 .menu-first-line {
@@ -328,12 +332,7 @@ li h5 {
 #main-books h5 {
     max-height: 20px;
 }
-footer {
-    background-color: #0C4C70;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-}
+
 footer {
     background-color: #0C4C70;
     color: #ffffff;
