@@ -311,8 +311,8 @@ li h5 {
     transition: 0.5s;
     width: 13%;
 }
-#main-books.card h5, span {
-    max-height: 30px;
+#main-books .card h5, span {
+    max-height: 25px;
     overflow: hidden;
 }
 #main-books .card:hover h5, span {
