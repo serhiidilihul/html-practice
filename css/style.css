@@ -386,3 +386,26 @@ footer img:hover {
     text-align: justify;
     font-size: 18px;
 }
+
+/* Events.html styles */
+.events-header h3 {
+    text-align: center;
+}
+.events-header p {
+    color: black;
+    text-align: justify;
+    font-size: 18px;
+}
+.upcoming-events h4 {
+    text-align: left;
+}
+.event-body h5, p{
+    text-align: justify;
+}
+.event-body h5 {
+    color:gray;
+}
+.event-body p {
+    color:black;
+    font-size: 18px;
+}
