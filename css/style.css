@@ -13,7 +13,7 @@ header {
 }
 
 #cart-img:hover {
-    content: url('/images/cart-hover.png');
+    content: url('../images/cart-hover.png');
     transition: 3s;
     transform: scale(1.1);
 }
@@ -348,13 +348,13 @@ footer img:hover {
     transition: 0.5s;
 }
 #fb:hover {
-    content: url('/images/footer-fb-hover.png');
+    content: url('../images/footer-fb-hover.png');
 }
 #ig:hover {
-    content: url('/images/footer-ig-hover.png');
+    content: url('../images/footer-ig-hover.png');
 }
 #in:hover {
-    content: url('/images/footer-in-hover.png');
+    content: url('../images/footer-in-hover.png');
 }
 
 /* Blog.html styles */
