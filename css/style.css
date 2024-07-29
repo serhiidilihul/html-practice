@@ -25,8 +25,8 @@ header {
 #input:focus,
 #input:hover {
     outline: none;
-    border-color: #0C4C70;
-    box-shadow: 0px 0px 5px #0C4C70;
+    border: none;
+    box-shadow: 0px 0px 5px 1px #0C4C70;
 }
 
 #quote {
@@ -121,7 +121,7 @@ header .genre-filter:hover {
     transition: 0.5s;
 }
 
-ul {
+.nav ul {
     padding-left: 0;
     list-style: none;
 }
@@ -422,3 +422,5 @@ footer img:hover {
     font-size: 18px;
     text-align: justify;
 }
+
+/* Contacts.html styles */
