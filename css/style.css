@@ -67,6 +67,10 @@ header .genre-filter:hover {
         grid-auto-columns: calc((100% / 5) - 9px);
         
     }
+    #sign-in {
+        position: fixed;
+        right: 0;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -261,7 +265,13 @@ li h5 {
     height: 150px;
     object-fit: cover;
 }
-.carousel .card p, h5 {
+.carousel .card p {
+    text-align: center;
+    text-overflow: ellipsis;
+    max-height: 40px;
+    overflow: hidden;
+    }
+.carousel .card h5 {
     text-align: center;
     text-overflow: ellipsis;
     max-height: 40px;
@@ -303,25 +313,28 @@ li h5 {
 }
 .card .buy-now {
     margin-bottom: 0;
+    border-color: #0C4C70;
 }
-.card h5, p {
-    text-align: center;
-}
+/* #main-books .card h5, p {
+    text-align: center !important;
+} */
 .card {
     transition: 0.5s;
     width: 13%;
 }
-#main-books .card h5, span {
+#main-books .card h5, #main-books .card span, #main-books .card p {
     max-height: 25px;
     overflow: hidden;
+    text-align: center !important;
 }
-#main-books .card:hover h5, span {
+#main-books .card:hover h5, #main-books .card:hover span, #main-books .card:hover p {
     max-height: fit-content;
     overflow: visible;
 }
 .card:hover {
     transform: scale(103%);
     transition: 0.5s;
+    box-shadow: 0 0 8px #0C4C70;
 }
 .book-genre {
     color:#0C4C70;
@@ -329,14 +342,14 @@ li h5 {
 #main-books .card {
     min-width: 220px;
 }
-#main-books h5 {
-    max-height: 20px;
-}
 
 footer {
     background-color: #0C4C70;
     color: #ffffff;
     padding: 20px;
+    text-align: center;
+}
+footer p {
     text-align: center;
 }
 footer img {
@@ -379,7 +392,6 @@ footer img:hover {
 /* About.html styles */
 .about-header {
     text-align: center;
-    color: black;
 }
 .about-body p {
     color: black;
@@ -405,7 +417,8 @@ footer img:hover {
 .event-body h5 {
     color:gray;
 }
-.event-body p {
+.upcoming-events .event-body p {
     color:black;
     font-size: 18px;
+    text-align: justify;
 }
