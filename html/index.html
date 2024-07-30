@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Books</title>
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <script src="../js/carousel.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -38,7 +42,7 @@
                 </button>
             </div>
             <div class="col-md-2 d-flex align-items-center justify-content-end" id="sign-in">
-                <a class="m-3" style="text-decoration: none;" href="">
+                <a class="m-3 signin-link" style="text-decoration: none;" href="#" data-toggle="modal" data-target="#registrationModal">
                     <h5 style="color:#0C4C70;">Sign in</h5>
                 </a>
                 <a class="m-3" href="">
@@ -97,9 +101,63 @@
 
         </div>
     </header>
-    <script>
-        
-    </script>
+<!-- Modal -->
+<div class="modal fade md" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog md" role="document">
+        <div class="modal-content md">
+            <div class="modal-header md">
+                <h5 class="modal-title" id="registrationModalLabel">Sign Up</h5>
+                <button type="submit" class="close-btn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/submit-registration" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" class="form-control" id="full-name" name="full_name" required placeholder="Name Surname">
+                        <small class="form-text text-muted">Your real name helps us personalize your experience.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="example@gmail.com">
+                        <small class="form-text text-muted">We’ll send you updates on new books and exclusive offers.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <small class="form-text text-muted">Use at least 8 characters, including a mix of letters and numbers.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="birth-date">Date of Birth</label>
+                        <input type="date" class="form-control" id="birth-date" name="birth_date" required>
+                        <small class="form-text text-muted">We use your date of birth to offer age-specific recommendations and discounts.</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="favorite-genre">Favorite Genre</label>
+                        <select class="form-control" id="favorite-genre" name="favorite_genre" required>
+                            <option value="" disabled selected>Select your favorite genre</option>
+                            <option value="History">History</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Horror">Horror</option>
+                            <option value="For Kids">For Kids</option>
+                        </select>
+                        <small class="form-text text-muted">This helps us recommend books you'll love.</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                            <label class="form-check-label" for="newsletter">Subscribe to our newsletter for book reviews and special discounts</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn buy-now mt-3 btn-block">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <main>
         <div class="row mt-4">
             <div class="col-1"></div>
@@ -664,9 +722,12 @@
             <!-- Contact Information Section -->
             <div class="col-4">
                 <h3 class="pb-2 border-bottom border-secondary">Contact Us</h3>
-                <p>Tel: +16745009766</p>
-                <p>Email: <a href="mailto:..." style="color: #fff;">info@blackbooks.com</a></p>
-                <p>Address: 985 York Road London</p>
+                <p>Tel: <a href="tel:+44 20 7946 0958">+44 20 7946
+                    0958</a></p>
+                <p>Email: <a href="mailto:..." style="color: #fff;">info@blackbooks.co.uk</a></p>
+                <p class="mb-0">Address: 123 Fictional Lane</p>
+                <p class="mb-0">Bloomsbury, London WC1B 3DG</p>
+                <p>United Kingdom</p>
                 <div>
                     <a href="https://www.facebook.com/"><img src="../images/footer-fb.png" alt="Facebook" id="fb"></a>
                     <a href="https://www.instagram.com/"><img src="../images/footer-ig.png" alt="Instagram" id="ig"></a>
