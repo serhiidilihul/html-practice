@@ -143,3 +143,27 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
+
+
+// Фильтрация книг по жанру
+document.querySelectorAll('.genre-filter').forEach(filter => {
+    filter.addEventListener('click', () => {
+        const genre = filter.textContent.trim();
+
+        // Скрываем все книги
+        document.querySelectorAll('.card-book').forEach(card => {
+            card.classList.add('hidden');
+        });
+
+        // Показываем только те книги, которые соответствуют выбранному жанру
+        document.querySelectorAll('.card-body').forEach(bookBody => {
+            const bookGenre = bookBody.querySelector('.book-genre').textContent.trim();
+            if (bookGenre === genre) {
+                bookBody.parentElement.classList.remove('hidden');
+            }
+            else if (genre === "All") {
+                bookBody.parentElement.classList.remove('hidden');
+            }
+        });
+    });
+});
