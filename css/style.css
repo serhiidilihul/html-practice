@@ -1,6 +1,5 @@
 body {
     color: #0C4C70;
-    width: 100vi;
     overflow-x: hidden;
 }
 
@@ -40,11 +39,13 @@ header {
 div.nav li h5 {
     text-align: center;
 }
+
 #logo-img {
     min-width: 80px;
 }
+
 header .genre-filter:hover {
-    color:#126a9c;
+    color: #126a9c;
     cursor: pointer;
 }
 
@@ -65,11 +66,16 @@ header .genre-filter:hover {
 @media screen and (max-width:900px) {
     .wrapper .carousel {
         grid-auto-columns: calc((100% / 5) - 9px);
-        
     }
+
+    .wrapper {
+        overflow: hidden;
+    }
+
     #sign-in {
         position: fixed;
         right: 0;
+        top: 25px;
     }
 }
 
@@ -87,6 +93,7 @@ header .genre-filter:hover {
     #quote {
         display: none;
     }
+
     .wrapper .carousel {
         grid-auto-columns: 100%;
     }
@@ -191,11 +198,13 @@ li h5 {
     background-color: #0C4C70;
     border-radius: 10px;
 }
+
 .wrapper {
     max-width: 1200px;
     width: 100%;
     position: relative;
 }
+
 .wrapper i {
     height: 50px;
     width: 50px;
@@ -203,20 +212,23 @@ li h5 {
     line-height: 50px;
     background-color: #fff;
     border-radius: 50%;
-    color:#0C4C70;
+    color: #0C4C70;
     cursor: pointer;
     position: absolute;
     font-size: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
-    box-shadow: 0 3px  6px #0C4C70;
+    box-shadow: 0 3px 6px #0C4C70;
 }
+
 .wrapper i:first-child {
     left: -110px;
 }
+
 .wrapper i:last-child {
     right: -110px;
 }
+
 .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
@@ -227,20 +239,25 @@ li h5 {
     scroll-behavior: smooth;
     scrollbar-width: 0;
 }
+
 .carousel::-webkit-scrollbar {
     display: none;
 }
+
 .carousel.no-transition {
     scroll-behavior: auto;
 }
+
 .carousel.dragging {
     scroll-snap-type: none;
     scroll-behavior: auto;
 }
+
 .carousel.dragging .card {
     cursor: grab;
     user-select: none;
 }
+
 .carousel .card {
     scroll-snap-align: start;
     height: 300px;
@@ -256,49 +273,57 @@ li h5 {
     flex-direction: column;
     cursor: pointer;
 }
+
 .carousel .card:hover {
     transform: scale(102%);
     transition: 0.5s;
 }
+
 .card .img img {
     /* width: 140px; */
     height: 150px;
     object-fit: cover;
 }
+
 .carousel .card p {
     text-align: center;
     text-overflow: ellipsis;
     max-height: 40px;
     overflow: hidden;
-    }
+}
+
 .carousel .card h5 {
     text-align: center;
     text-overflow: ellipsis;
     max-height: 40px;
     overflow: hidden;
-    }
+}
 
 @media screen and (max-width:1300px) {
     .wrapper .carousel {
         grid-auto-columns: 35%;
     }
 }
+
 @media screen and (max-width:900px) {
     .wrapper .carousel {
         grid-auto-columns: 50%;
     }
 }
+
 @media screen and (max-width:600px) {
     .wrapper .carousel {
         grid-auto-columns: 75%;
     }
 }
+
 /* END of Carousel styles */
 
 .buy-now {
     background-color: #0C4C70;
     color: #ffffff;
     cursor: pointer;
+    width: 100%;
 }
 
 .buy-now:hover {
@@ -311,10 +336,12 @@ li h5 {
     height: 200px;
     width: auto !important;
 }
+
 .card .buy-now {
     margin-bottom: 0;
     border-color: #0C4C70;
 }
+
 /* #main-books .card h5, p {
     text-align: center !important;
 } */
@@ -322,23 +349,32 @@ li h5 {
     transition: 0.5s;
     width: 13%;
 }
-#main-books .card h5, #main-books .card span, #main-books .card p {
+
+#main-books .card h5,
+#main-books .card span,
+#main-books .card p {
     max-height: 25px;
     overflow: hidden;
     text-align: center !important;
 }
-#main-books .card:hover h5, #main-books .card:hover span, #main-books .card:hover p {
+
+#main-books .card:hover h5,
+#main-books .card:hover span,
+#main-books .card:hover p {
     max-height: fit-content;
     overflow: visible;
 }
+
 .card:hover {
     transform: scale(103%);
     transition: 0.5s;
     box-shadow: 0 0 8px #0C4C70;
 }
+
 .book-genre {
-    color:#0C4C70;
+    color: #0C4C70;
 }
+
 #main-books .card {
     min-width: 220px;
 }
@@ -349,23 +385,29 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
 footer p {
     text-align: center;
 }
+
 footer img {
     width: 50px;
     transition: 0.5s;
 }
+
 footer img:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
+
 #fb:hover {
     content: url('../images/footer-fb-hover.png');
 }
+
 #ig:hover {
     content: url('../images/footer-ig-hover.png');
 }
+
 #in:hover {
     content: url('../images/footer-in-hover.png');
 }
@@ -375,14 +417,17 @@ footer img:hover {
     text-align: left;
     color: black;
 }
+
 .post-title .episode {
     color: gray;
     text-align: left;
 }
+
 .post-header .post-date {
     text-align: end;
     color: gray;
 }
+
 .post-body p {
     text-align: justify;
     color: black;
@@ -393,6 +438,7 @@ footer img:hover {
 .about-header {
     text-align: center;
 }
+
 .about-body p {
     color: black;
     text-align: justify;
@@ -403,25 +449,72 @@ footer img:hover {
 .events-header h3 {
     text-align: center;
 }
+
 .events-header p {
     color: black;
     text-align: justify;
     font-size: 18px;
 }
+
 .upcoming-events h4 {
     text-align: left;
 }
-.event-body h5, p{
+
+.event-body h5,
+p {
     text-align: justify;
 }
+
 .event-body h5 {
-    color:gray;
+    color: gray;
 }
+
 .upcoming-events .event-body p {
-    color:black;
+    color: black;
     font-size: 18px;
     text-align: justify;
 }
 
 /* Contacts.html styles */
-.hidden { display: none !important; }
+.hidden {
+    display: none !important;
+}
+
+.row {
+    margin-right: 0;
+}
+
+.close-btn {
+    color: #0C4C70;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    background: #ffffff;
+    border: #ffffff;
+}
+
+.form-group input {
+    color: gray;
+}
+
+.form-group input:hover, .form-group input:focus {
+    outline: none;
+    /* border: none; */
+    box-shadow: 0px 0px 5px 1px #0C4C70;
+}
+
+.form-group select {
+    color: gray;
+}
+.form-group select:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 5px 1px #0C4C70;
+}
+input[type="checkbox"]:checked {
+    background-color: #0C4C70;
+    color: #ffffff;
+}
+input[type="checkbox"]:hover, input[type="checkbox"]:focus, input[type="checkbox"]:active {
+    box-shadow: none;
+}
