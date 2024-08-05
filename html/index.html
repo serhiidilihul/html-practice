@@ -7,13 +7,13 @@
     <title>Black Books</title>
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <script src="../js/carousel.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </head>
 
@@ -42,7 +42,8 @@
                 </button>
             </div>
             <div class="col-md-2 d-flex align-items-center justify-content-end" id="sign-in">
-                <a class="m-3 signin-link" style="text-decoration: none;" href="#" data-toggle="modal" data-target="#registrationModal">
+                <a class="m-3 signin-link" style="text-decoration: none;" href="#" data-toggle="modal"
+                    data-target="#registrationModal">
                     <h5 style="color:#0C4C70;">Sign in</h5>
                 </a>
                 <a class="m-3" href="">
@@ -59,16 +60,24 @@
                             <h5>Menu</h5>
                         </li>
                         <li><a href="blog.html"><img style="width:40px;" src="../images/blog.png" alt=""></a>
-                            <a href="blog.html"><h5>Blog</h5></a>
+                            <a href="blog.html">
+                                <h5>Blog</h5>
+                            </a>
                         </li>
                         <li><a href="events.html"><img style="width:40px;" src="../images/events.png" alt=""></a>
-                            <a href="events.html"><h5>Events</h5></a>
+                            <a href="events.html">
+                                <h5>Events</h5>
+                            </a>
                         </li>
                         <li><a href="about.html"><img style="width:40px;" src="../images/about.png" alt=""></a>
-                            <a href="about.html"><h5>About</h5></a>
+                            <a href="about.html">
+                                <h5>About</h5>
+                            </a>
                         </li>
                         <li><a href="contacts.html"><img style="width:40px;" src="../images/contacts.png" alt=""></a>
-                            <a href="contacts.html"><h5>Contacts</h5></a>
+                            <a href="contacts.html">
+                                <h5>Contacts</h5>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -101,63 +110,93 @@
 
         </div>
     </header>
-<!-- Modal -->
-<div class="modal fade md" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
-    <div class="modal-dialog md" role="document">
-        <div class="modal-content md">
-            <div class="modal-header md">
-                <h5 class="modal-title" id="registrationModalLabel">Sign Up</h5>
-                <button type="submit" class="close-btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/submit-registration" method="POST">
-                    <div class="form-group mb-3">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" class="form-control" id="full-name" name="full_name" required placeholder="Name Surname">
-                        <small class="form-text text-muted">Your real name helps us personalize your experience.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required placeholder="example@gmail.com">
-                        <small class="form-text text-muted">We’ll send you updates on new books and exclusive offers.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        <small class="form-text text-muted">Use at least 8 characters, including a mix of letters and numbers.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="birth-date">Date of Birth</label>
-                        <input type="date" class="form-control" id="birth-date" name="birth_date" required>
-                        <small class="form-text text-muted">We use your date of birth to offer age-specific recommendations and discounts.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="favorite-genre">Favorite Genre</label>
-                        <select class="form-control" id="favorite-genre" name="favorite_genre" required>
-                            <option value="" disabled selected>Select your favorite genre</option>
-                            <option value="History">History</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Mystery">Mystery</option>
-                            <option value="Fiction">Fiction</option>
-                            <option value="Horror">Horror</option>
-                            <option value="For Kids">For Kids</option>
-                        </select>
-                        <small class="form-text text-muted">This helps us recommend books you'll love.</small>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
-                            <label class="form-check-label" for="newsletter">Subscribe to our newsletter for book reviews and special discounts</label>
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Sign Up</h5>
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <div class="form-group mb-3">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" class="form-control" id="full-name" name="full_name" required
+                                placeholder="Name Surname">
+                            <small class="form-text text-muted">Your real name helps us personalize your
+                                experience.</small>
                         </div>
-                    </div>
-                    <button type="submit" class="btn buy-now mt-3 btn-block">Sign Up</button>
-                </form>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                placeholder="example@gmail.com">
+                            <small class="form-text text-muted">We’ll send you updates on new books and exclusive
+                                offers.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <small class="form-text text-muted">Use at least 8 characters, including a mix of letters
+                                and numbers.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="birth-date">Date of Birth</label>
+                            <input type="date" class="form-control" id="birth-date" name="birth_date" required>
+                            <small class="form-text text-muted">We use your date of birth to offer age-specific
+                                recommendations and discounts.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="favorite-genre">Favorite Genre</label>
+                            <select class="form-control" id="favorite-genre" name="favorite_genre" required>
+                                <option value="" disabled selected>Select your favorite genre</option>
+                                <option value="History">History</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Horror">Horror</option>
+                                <option value="For Kids">For Kids</option>
+                            </select>
+                            <small class="form-text text-muted">This helps us recommend books you'll love.</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">Subscribe to our newsletter for book
+                                    reviews and special discounts</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn buy-now mt-3 btn-block" id="previewButton">Sign Up</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirm Your Details</h5>
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="confirmationList"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn buy-now" id="confirmButton">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <div class="row mt-4">
             <div class="col-1"></div>
@@ -206,493 +245,494 @@
                 </div>
             </div>
         </div>
-            <div class="row m-3 p-3 d-flex">
-                <div class="row m-1" style="letter-spacing: 5px; text-align: center;">
-                    <h3>Last additions</h3>
-                </div>
-                <div class="col-sm-12 d-flex flex-wrap justify-content-around"  id="main-books">
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book1.jpg"
-                            alt="A Bear Called Paddington: Hatchards Exclusive Edition">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">A Bear Called Paddington: Hatchards Exclusive Edition</h5>
-                            <p class="book-genre m-0">For Kids</p>
-                            <p class="card-text">by Michael Bond<br>$14.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book2.jpg" alt="The Napoleon of Notting Hill">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Napoleon of Notting Hill</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by G K Chesterton<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book3.jpg" alt="Yellowface">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Yellowface</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by R.F. Kuang<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book4.jpg"
-                            alt="The Lonely Skier: Hatchards Library Edition">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Lonely Skier: Hatchards Library Edition</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Hammond Innes<br>$16.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book5.jpg" alt="Murder on Lake Garda">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Murder on Lake Garda</h5>
-                            <p class="book-genre m-0">Mistery</p>
-                            <p class="card-text">by Tom Hindle<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book6.jpg" alt="La Vie: A year in rural France">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">La Vie: A year in rural France</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by John Lewis-Stempel<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book7.jpg" alt="Izabela the Valiant: The Story of an Indomitable Polish Princess">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Izabela the Valiant: The Story of an Indomitable Polish Princess</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Adam Zamoyski<br>$25.00</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book8.jpg" alt="The Fraud">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Fraud</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Zadie Smith<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book9.jpg" alt="My Brilliant Friend">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">My Brilliant Friend</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Elena Ferrante<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book10.jpg" alt="The Bee Sting">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Bee Sting</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Paul Murray<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book11.jpg" alt="Paris '44: The Shame and the Glory">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Paris '44: The Shame and the Glory</h5>
-                            <p class="book-genre m-0">History</p>
-                            <p class="card-text">by Patrick Bishop<br>$25.00</p>
-                            <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book12.jpg" alt="The Silent Patient">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Silent Patient</h5>
-                            <p class="book-genre m-0">Mystery</p>
-                            <p class="card-text">by Alex Michaelides<br>$12.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book13.jpg" alt="The Night Circus">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Night Circus</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Erin Morgenstern<br>$14.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book14.jpg" alt="The Book Thief">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Book Thief</h5>
-                            <p class="book-genre m-0">History</p>
-                            <p class="card-text">by Markus Zusak<br>$11.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book15.jpg" alt="Gone Girl">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Gone Girl</h5>
-                            <p class="book-genre m-0">Mystery</p>
-                            <p class="card-text">by Gillian Flynn<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book16.jpg" alt="Pride and Prejudice">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Pride and Prejudice</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Jane Austen<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book17.jpg" alt="It">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">It</h5>
-                            <p class="book-genre m-0">Horror</p>
-                            <p class="card-text">by Stephen King<br>$15.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book18.jpg" alt="Harry Potter and the Sorcerer's Stone">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by J.K. Rowling<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book19.jpg" alt="The Shining">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Shining</h5>
-                            <p class="book-genre m-0">Horror</p>
-                            <p class="card-text">by Stephen King<br>$13.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book20.jpg" alt="The Girl on the Train">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Girl on the Train</h5>
-                            <p class="book-genre m-0">Mystery</p>
-                            <p class="card-text">by Paula Hawkins<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book21.jpg" alt="To Kill a Mockingbird">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">To Kill a Mockingbird</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Harper Lee<br>$7.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book22.jpg" alt="The Fault in Our Stars">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Fault in Our Stars</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by John Green<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book23.jpg" alt="Dracula">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Dracula</h5>
-                            <p class="book-genre m-0">Horror</p>
-                            <p class="card-text">by Bram Stoker<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book24.jpg" alt="The Great Gatsby">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Great Gatsby</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by F. Scott Fitzgerald<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book25.jpg" alt="The Catcher in the Rye">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Catcher in the Rye</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by J.D. Salinger<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book26.jpg" alt="A Tale of Two Cities">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">A Tale of Two Cities</h5>
-                            <p class="book-genre m-0">History</p>
-                            <p class="card-text">by Charles Dickens<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book27.jpg" alt="The Alchemist">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Alchemist</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Paulo Coelho<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book28.jpg" alt="Moby Dick">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Moby Dick</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Herman Melville<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book29.jpg" alt="War and Peace">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">War and Peace</h5>
-                            <p class="book-genre m-0">History</p>
-                            <p class="card-text">by Leo Tolstoy<br>$12.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book30.jpg" alt="Wuthering Heights">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Wuthering Heights</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Emily Brontë<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book31.jpg" alt="Frankenstein">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Frankenstein</h5>
-                            <p class="book-genre m-0">Horror</p>
-                            <p class="card-text">by Mary Shelley<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book32.jpg" alt="Sense and Sensibility">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Sense and Sensibility</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Jane Austen<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book33.jpg" alt="The Hobbit">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Hobbit</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by J.R.R. Tolkien<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book34.jpg" alt="Little Women">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Little Women</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Louisa May Alcott<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book35.jpg" alt="1984">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">1984</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by George Orwell<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book36.jpg" alt="The Outsiders">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Outsiders</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by S.E. Hinton<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book37.jpg" alt="The Road">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Road</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Cormac McCarthy<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book38.jpg" alt="The Grapes of Wrath">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Grapes of Wrath</h5>
-                            <p class="book-genre m-0">History</p>
-                            <p class="card-text">by John Steinbeck<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book39.jpg" alt="Catch-22">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Catch-22</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Joseph Heller<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book40.jpg" alt="Brave New World">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Brave New World</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Aldous Huxley<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book41.jpg" alt="Crime and Punishment">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Crime and Punishment</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Fyodor Dostoevsky<br>$11.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book42.jpg" alt="Anna Karenina">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Anna Karenina</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Leo Tolstoy<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book43.jpg" alt="A Clockwork Orange">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">A Clockwork Orange</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Anthony Burgess<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book44.jpg" alt="Lolita">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Lolita</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Vladimir Nabokov<br>$11.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book45.jpg" alt="Beloved">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Beloved</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Toni Morrison<br>$12.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book46.jpg" alt="Slaughterhouse-Five">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Slaughterhouse 5</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Kurt Vonnegut<br>$10.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book47.jpg" alt="The Stand">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">The Stand</h5>
-                            <p class="book-genre m-0">Horror</p>
-                            <p class="card-text">by Stephen King<br>$14.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book48.jpg" alt="Jane Eyre">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Jane Eyre</h5>
-                            <p class="book-genre m-0">Romance</p>
-                            <p class="card-text">by Charlotte Brontë<br>$8.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card-book card d-flex p-2 m-2">
-                        <img class="card-img w-75" src="../images/book49.jpg" alt="Great Expectations">
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <h5 class="card-title">Great Expectations</h5>
-                            <p class="book-genre m-0">Fiction</p>
-                            <p class="card-text">by Charles Dickens<br>$9.99</p>
-                            <a href="#" class="btn btn-primary buy-now">Buy Now</a>
-                        </div>
-                    </div>
-                                                                                
-
-                </div>
+        <div class="row m-3 p-3 d-flex">
+            <div class="row m-1" style="letter-spacing: 5px; text-align: center;">
+                <h3>Last additions</h3>
             </div>
+            <div class="col-sm-12 d-flex flex-wrap justify-content-around" id="main-books">
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book1.jpg"
+                        alt="A Bear Called Paddington: Hatchards Exclusive Edition">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">A Bear Called Paddington: Hatchards Exclusive Edition</h5>
+                        <p class="book-genre m-0">For Kids</p>
+                        <p class="card-text">by Michael Bond<br>$14.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book2.jpg" alt="The Napoleon of Notting Hill">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Napoleon of Notting Hill</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by G K Chesterton<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book3.jpg" alt="Yellowface">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Yellowface</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by R.F. Kuang<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book4.jpg"
+                        alt="The Lonely Skier: Hatchards Library Edition">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Lonely Skier: Hatchards Library Edition</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Hammond Innes<br>$16.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book5.jpg" alt="Murder on Lake Garda">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Murder on Lake Garda</h5>
+                        <p class="book-genre m-0">Mistery</p>
+                        <p class="card-text">by Tom Hindle<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book6.jpg" alt="La Vie: A year in rural France">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">La Vie: A year in rural France</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by John Lewis-Stempel<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book7.jpg"
+                        alt="Izabela the Valiant: The Story of an Indomitable Polish Princess">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Izabela the Valiant: The Story of an Indomitable Polish Princess</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Adam Zamoyski<br>$25.00</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book8.jpg" alt="The Fraud">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Fraud</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Zadie Smith<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book9.jpg" alt="My Brilliant Friend">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">My Brilliant Friend</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Elena Ferrante<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book10.jpg" alt="The Bee Sting">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Bee Sting</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Paul Murray<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book11.jpg" alt="Paris '44: The Shame and the Glory">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Paris '44: The Shame and the Glory</h5>
+                        <p class="book-genre m-0">History</p>
+                        <p class="card-text">by Patrick Bishop<br>$25.00</p>
+                        <a href="#" class="btn btn-primary buy-now buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book12.jpg" alt="The Silent Patient">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Silent Patient</h5>
+                        <p class="book-genre m-0">Mystery</p>
+                        <p class="card-text">by Alex Michaelides<br>$12.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book13.jpg" alt="The Night Circus">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Night Circus</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Erin Morgenstern<br>$14.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book14.jpg" alt="The Book Thief">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Book Thief</h5>
+                        <p class="book-genre m-0">History</p>
+                        <p class="card-text">by Markus Zusak<br>$11.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book15.jpg" alt="Gone Girl">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Gone Girl</h5>
+                        <p class="book-genre m-0">Mystery</p>
+                        <p class="card-text">by Gillian Flynn<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book16.jpg" alt="Pride and Prejudice">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Pride and Prejudice</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Jane Austen<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book17.jpg" alt="It">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">It</h5>
+                        <p class="book-genre m-0">Horror</p>
+                        <p class="card-text">by Stephen King<br>$15.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book18.jpg" alt="Harry Potter and the Sorcerer's Stone">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by J.K. Rowling<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book19.jpg" alt="The Shining">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Shining</h5>
+                        <p class="book-genre m-0">Horror</p>
+                        <p class="card-text">by Stephen King<br>$13.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book20.jpg" alt="The Girl on the Train">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Girl on the Train</h5>
+                        <p class="book-genre m-0">Mystery</p>
+                        <p class="card-text">by Paula Hawkins<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book21.jpg" alt="To Kill a Mockingbird">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">To Kill a Mockingbird</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Harper Lee<br>$7.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book22.jpg" alt="The Fault in Our Stars">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Fault in Our Stars</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by John Green<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book23.jpg" alt="Dracula">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Dracula</h5>
+                        <p class="book-genre m-0">Horror</p>
+                        <p class="card-text">by Bram Stoker<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book24.jpg" alt="The Great Gatsby">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Great Gatsby</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by F. Scott Fitzgerald<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book25.jpg" alt="The Catcher in the Rye">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Catcher in the Rye</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by J.D. Salinger<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book26.jpg" alt="A Tale of Two Cities">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">A Tale of Two Cities</h5>
+                        <p class="book-genre m-0">History</p>
+                        <p class="card-text">by Charles Dickens<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book27.jpg" alt="The Alchemist">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Alchemist</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Paulo Coelho<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book28.jpg" alt="Moby Dick">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Moby Dick</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Herman Melville<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book29.jpg" alt="War and Peace">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">War and Peace</h5>
+                        <p class="book-genre m-0">History</p>
+                        <p class="card-text">by Leo Tolstoy<br>$12.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book30.jpg" alt="Wuthering Heights">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Wuthering Heights</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Emily Brontë<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book31.jpg" alt="Frankenstein">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Frankenstein</h5>
+                        <p class="book-genre m-0">Horror</p>
+                        <p class="card-text">by Mary Shelley<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book32.jpg" alt="Sense and Sensibility">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Sense and Sensibility</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Jane Austen<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book33.jpg" alt="The Hobbit">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Hobbit</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by J.R.R. Tolkien<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book34.jpg" alt="Little Women">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Little Women</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Louisa May Alcott<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book35.jpg" alt="1984">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">1984</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by George Orwell<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book36.jpg" alt="The Outsiders">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Outsiders</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by S.E. Hinton<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book37.jpg" alt="The Road">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Road</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Cormac McCarthy<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book38.jpg" alt="The Grapes of Wrath">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Grapes of Wrath</h5>
+                        <p class="book-genre m-0">History</p>
+                        <p class="card-text">by John Steinbeck<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book39.jpg" alt="Catch-22">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Catch-22</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Joseph Heller<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book40.jpg" alt="Brave New World">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Brave New World</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Aldous Huxley<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book41.jpg" alt="Crime and Punishment">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Crime and Punishment</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Fyodor Dostoevsky<br>$11.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book42.jpg" alt="Anna Karenina">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Anna Karenina</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Leo Tolstoy<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book43.jpg" alt="A Clockwork Orange">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">A Clockwork Orange</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Anthony Burgess<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book44.jpg" alt="Lolita">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Lolita</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Vladimir Nabokov<br>$11.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book45.jpg" alt="Beloved">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Beloved</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Toni Morrison<br>$12.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book46.jpg" alt="Slaughterhouse-Five">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Slaughterhouse 5</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Kurt Vonnegut<br>$10.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book47.jpg" alt="The Stand">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">The Stand</h5>
+                        <p class="book-genre m-0">Horror</p>
+                        <p class="card-text">by Stephen King<br>$14.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book48.jpg" alt="Jane Eyre">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Jane Eyre</h5>
+                        <p class="book-genre m-0">Romance</p>
+                        <p class="card-text">by Charlotte Brontë<br>$8.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="card-book card d-flex p-2 m-2">
+                    <img class="card-img w-75" src="../images/book49.jpg" alt="Great Expectations">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title">Great Expectations</h5>
+                        <p class="book-genre m-0">Fiction</p>
+                        <p class="card-text">by Charles Dickens<br>$9.99</p>
+                        <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
         </div>
     </main>
     <footer>
@@ -723,7 +763,7 @@
             <div class="col-4">
                 <h3 class="pb-2 border-bottom border-secondary">Contact Us</h3>
                 <p>Tel: <a href="tel:+44 20 7946 0958">+44 20 7946
-                    0958</a></p>
+                        0958</a></p>
                 <p>Email: <a href="mailto:..." style="color: #fff;">info@blackbooks.co.uk</a></p>
                 <p class="mb-0">Address: 123 Fictional Lane</p>
                 <p class="mb-0">Bloomsbury, London WC1B 3DG</p>
@@ -731,7 +771,8 @@
                 <div>
                     <a href="https://www.facebook.com/"><img src="../images/footer-fb.png" alt="Facebook" id="fb"></a>
                     <a href="https://www.instagram.com/"><img src="../images/footer-ig.png" alt="Instagram" id="ig"></a>
-                    <a href="https://www.linkedin.com/feed/"><img src="../images/footer-in.png" alt="LinkedIn" id="in"></a>
+                    <a href="https://www.linkedin.com/feed/"><img src="../images/footer-in.png" alt="LinkedIn"
+                            id="in"></a>
                 </div>
             </div>
         </div>

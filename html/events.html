@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <script src="../js/carousel.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -43,7 +43,8 @@
                 </button>
             </div>
             <div class="col-md-2 d-flex align-items-center justify-content-end" id="sign-in">
-                <a class="m-3 signin-link" style="text-decoration: none;" href="#" data-toggle="modal" data-target="#registrationModal">
+                <a class="m-3 signin-link" style="text-decoration: none;" href="#" data-toggle="modal"
+                    data-target="#registrationModal">
                     <h5 style="color:#0C4C70;">Sign in</h5>
                 </a>
                 <a class="m-3" href="">
@@ -107,127 +108,212 @@
 
         </div>
     </header>
-    <!-- Modal -->
-<div class="modal fade md" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
-    <div class="modal-dialog md" role="document">
-        <div class="modal-content md">
-            <div class="modal-header md">
-                <h5 class="modal-title" id="registrationModalLabel">Sign Up</h5>
-                <button type="submit" class="close-btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/submit-registration" method="POST">
-                    <div class="form-group mb-3">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" class="form-control" id="full-name" name="full_name" required placeholder="Name Surname">
-                        <small class="form-text text-muted">Your real name helps us personalize your experience.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required placeholder="example@gmail.com">
-                        <small class="form-text text-muted">We’ll send you updates on new books and exclusive offers.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        <small class="form-text text-muted">Use at least 8 characters, including a mix of letters and numbers.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="birth-date">Date of Birth</label>
-                        <input type="date" class="form-control" id="birth-date" name="birth_date" required>
-                        <small class="form-text text-muted">We use your date of birth to offer age-specific recommendations and discounts.</small>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="favorite-genre">Favorite Genre</label>
-                        <select class="form-control" id="favorite-genre" name="favorite_genre" required>
-                            <option value="" disabled selected>Select your favorite genre</option>
-                            <option value="History">History</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Mystery">Mystery</option>
-                            <option value="Fiction">Fiction</option>
-                            <option value="Horror">Horror</option>
-                            <option value="For Kids">For Kids</option>
-                        </select>
-                        <small class="form-text text-muted">This helps us recommend books you'll love.</small>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
-                            <label class="form-check-label" for="newsletter">Subscribe to our newsletter for book reviews and special discounts</label>
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Sign Up</h5>
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <div class="form-group mb-3">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" class="form-control" id="full-name" name="full_name" required
+                                placeholder="Name Surname">
+                            <small class="form-text text-muted">Your real name helps us personalize your
+                                experience.</small>
                         </div>
-                    </div>
-                    <button type="submit" class="btn buy-now mt-3 btn-block">Sign Up</button>
-                </form>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                placeholder="example@gmail.com">
+                            <small class="form-text text-muted">We’ll send you updates on new books and exclusive
+                                offers.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <small class="form-text text-muted">Use at least 8 characters, including a mix of letters
+                                and numbers.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="birth-date">Date of Birth</label>
+                            <input type="date" class="form-control" id="birth-date" name="birth_date" required>
+                            <small class="form-text text-muted">We use your date of birth to offer age-specific
+                                recommendations and discounts.</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="favorite-genre">Favorite Genre</label>
+                            <select class="form-control" id="favorite-genre" name="favorite_genre" required>
+                                <option value="" disabled selected>Select your favorite genre</option>
+                                <option value="History">History</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Horror">Horror</option>
+                                <option value="For Kids">For Kids</option>
+                            </select>
+                            <small class="form-text text-muted">This helps us recommend books you'll love.</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">Subscribe to our newsletter for book
+                                    reviews and special discounts</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn buy-now mt-3 btn-block" id="previewButton">Sign Up</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirm Your Details</h5>
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="confirmationList"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn buy-now" id="confirmButton">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('previewButton').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const birthDate = document.getElementById('birth-date').value;
+            const favoriteGenre = document.getElementById('favorite-genre').value;
+            const newsletter = document.getElementById('newsletter').checked ? 'Yes' : 'No';
+
+            const confirmationList = document.getElementById('confirmationList');
+            confirmationList.innerHTML = `
+    <li><strong>Full Name: </strong> &nbsp&nbsp ${fullName}</li>
+    <li><strong>Email: </strong> &nbsp&nbsp ${email}</li>
+    <li><strong>Password: </strong> &nbsp&nbsp ${'*'.repeat(password.length)}</li>
+    <li><strong>Date of Birth: </strong> &nbsp&nbsp ${birthDate}</li>
+    <li><strong>Favorite Genre: </strong> &nbsp&nbsp ${favoriteGenre}</li>
+    <li><strong>Subscribe to Newsletter: </strong> &nbsp&nbsp ${newsletter}</li>
+`;
+
+            $('#registrationModal').modal('hide');
+            $('#confirmationModal').modal('show');
+        });
+        $(document).ready(function () {
+            document.getElementById('confirmButton').addEventListener('click', function () {
+                // Hide the modal
+                $('#confirmationModal').modal('hide');
+                // Remove the backdrop
+                $('.modal-backdrop').remove();
+            });
+        });
+    </script>
     <main>
         <div class="row mt-5">
             <div class="col-1"></div>
             <div class="col-10">
                 <div class="events-header row mb-5">
                     <h3 class="mb-3">Events Calendar</h3>
-                    <p>Welcome to the Black Books Events Calendar! Here, we transform our bookstore into a lively hub of literary activity and community engagement. Inspired by the vibrant and unpredictable world of Black Books, our events are designed to bring book lovers together in ways that are both fun and enlightening.</p>
+                    <p>Welcome to the Black Books Events Calendar! Here, we transform our bookstore into a lively hub of
+                        literary activity and community engagement. Inspired by the vibrant and unpredictable world of
+                        Black Books, our events are designed to bring book lovers together in ways that are both fun and
+                        enlightening.</p>
                 </div>
                 <div class="upcoming-events row">
                     <h4 class="mb-4">Upcoming Events</h4>
                     <div class="upcoming-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>August 10, 2024 - Author Meet and Greet:</h5>
-                            <p>Join us for an evening with bestselling author Jane Doe. Get your books signed and enjoy a lively discussion about her latest novel. Refreshments will be provided, and there will be a Q&A session where you can ask Jane about her writing process, inspirations, and more.</p>
+                            <p>Join us for an evening with bestselling author Jane Doe. Get your books signed and enjoy
+                                a lively discussion about her latest novel. Refreshments will be provided, and there
+                                will be a Q&A session where you can ask Jane about her writing process, inspirations,
+                                and more.</p>
                         </div>
                     </div>
                     <div class="upcoming-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>August 24, 2024 - Mystery Night:</h5>
-                            <p>Dive into the world of mystery and intrigue with our special Mystery Night event. We'll have a live reading of classic mystery excerpts, a whodunit game, and a chance to win some thrilling prizes. Perfect for fans of Sherlock Holmes, Agatha Christie, and all things mysterious.</p>
+                            <p>Dive into the world of mystery and intrigue with our special Mystery Night event. We'll
+                                have a live reading of classic mystery excerpts, a whodunit game, and a chance to win
+                                some thrilling prizes. Perfect for fans of Sherlock Holmes, Agatha Christie, and all
+                                things mysterious.</p>
                         </div>
                     </div>
                     <div class="upcoming-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>September 5, 2024 - Children's Story Hour:</h5>
-                            <p>Bring your little ones for a magical morning of storytelling. Our friendly staff will read from a selection of beloved children's books, followed by fun activities and crafts. It's a great way to inspire a love of reading in the next generation.</p>
+                            <p>Bring your little ones for a magical morning of storytelling. Our friendly staff will
+                                read from a selection of beloved children's books, followed by fun activities and
+                                crafts. It's a great way to inspire a love of reading in the next generation.</p>
                         </div>
                     </div>
                     <div class="upcoming-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>September 19, 2024 - Book Club Meeting:</h5>
-                            <p>Join our monthly book club and connect with fellow book enthusiasts. This month, we're discussing <em>The Night Circus</em> by Erin Morgenstern. Whether you've read the book or are just curious, come along for a stimulating conversation and new friendships.</p>
+                            <p>Join our monthly book club and connect with fellow book enthusiasts. This month, we're
+                                discussing <em>The Night Circus</em> by Erin Morgenstern. Whether you've read the book
+                                or are just curious, come along for a stimulating conversation and new friendships.</p>
                         </div>
                     </div>
                     <div class="upcoming-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>October 3, 2024 - Horror Book Night:</h5>
-                            <p>As Halloween approaches, immerse yourself in spine-chilling tales. Our Horror Book Night will feature readings from some of the creepiest novels, a discussion on the best horror writers, and a costume contest with a prize for the scariest outfit. Dare to join us if you love a good scare!</p>
+                            <p>As Halloween approaches, immerse yourself in spine-chilling tales. Our Horror Book Night
+                                will feature readings from some of the creepiest novels, a discussion on the best horror
+                                writers, and a costume contest with a prize for the scariest outfit. Dare to join us if
+                                you love a good scare!</p>
                         </div>
                     </div>
                     <div class="upcoming-event row mb-5">
                         <div class="event-body">
                             <h5>October 31, 2024 - Halloween Party:</h5>
-                            <p>Celebrate Halloween with us at Black Books! Enjoy spooky decorations, themed snacks, and a special reading of Edgar Allan Poe's <em>The Tell-Tale Heart</em>. There will be games, prizes, and a haunted bookshop tour that will make this night one to remember.</p>
+                            <p>Celebrate Halloween with us at Black Books! Enjoy spooky decorations, themed snacks, and
+                                a special reading of Edgar Allan Poe's <em>The Tell-Tale Heart</em>. There will be
+                                games, prizes, and a haunted bookshop tour that will make this night one to remember.
+                            </p>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="past-events row">
                     <h4 class="mb-4">Past Events</h4>
                     <div class="past-event row border-bottom mb-5">
                         <div class="event-body">
                             <h5>July 20, 2024 - Poetry Slam:</h5>
-                            <p>Our poetry slam event was a huge success! Talented poets from around the city shared their work in an open mic format. It was a night of creativity, expression, and powerful words.</p>
+                            <p>Our poetry slam event was a huge success! Talented poets from around the city shared
+                                their work in an open mic format. It was a night of creativity, expression, and powerful
+                                words.</p>
                         </div>
                     </div>
                     <div class="past-event row mb-5">
                         <div class="event-body">
                             <h5>June 15, 2024 - Summer Reading Kickoff:</h5>
-                            <p>We kicked off the summer with a celebration of reading. Our guests enjoyed special discounts on summer reads, participated in a reading challenge, and enjoyed live music and refreshments.</p>
+                            <p>We kicked off the summer with a celebration of reading. Our guests enjoyed special
+                                discounts on summer reads, participated in a reading challenge, and enjoyed live music
+                                and refreshments.</p>
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </main>
     <footer>
@@ -258,7 +344,7 @@
             <div class="col-4">
                 <h3 class="pb-2 border-bottom border-secondary">Contact Us</h3>
                 <p>Tel: <a href="tel:+44 20 7946 0958">+44 20 7946
-                    0958</a></p>
+                        0958</a></p>
                 <p>Email: <a href="mailto:..." style="color: #fff;">info@blackbooks.co.uk</a></p>
                 <p class="mb-0">Address: 123 Fictional Lane</p>
                 <p class="mb-0">Bloomsbury, London WC1B 3DG</p>
